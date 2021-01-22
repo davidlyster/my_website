@@ -30,6 +30,7 @@ staticfiles/*
 ###########################################
 README_old.md
 hidden_config.py
+dev_config.py
 /venv/*
 /.idea/*
 

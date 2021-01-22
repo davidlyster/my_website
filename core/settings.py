@@ -33,7 +33,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app',  # Enable the inner app 
     # register new apps
-    # 'twitterapp',
+    'twitterapp',
     # 'stocks'
 ]
 
