@@ -16,9 +16,7 @@ def twitter_main(request):
 
     twit_api = create_twitter_api_object()
 
-    print("HERE1")
     if request.method == 'POST':
-        print("HERE2")
         form = BasicSearchForm(request.POST)
 
         # check whether it's valid:
@@ -43,6 +41,7 @@ def twitter_main(request):
         'search_term': search_term,
         'form': form,
         'full_tweet_data': full_tweet_data,
+        'tweet_amount': tweet_amount,
     }
 
     if TESTING:
