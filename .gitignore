@@ -1,0 +1,35 @@
+# byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# tests and coverage
+*.pytest_cache
+.coverage
+
+# database & logs
+*.db
+*.sqlite3
+*.log
+
+# venv
+env
+venv
+
+# other
+.DS_Store
+
+# javascript
+package-lock.json
+
+staticfiles/*
+!staticfiles/.gitkeep 
+
+
+###########################################
+#              My Additions               #
+###########################################
+README_old.md
+hidden_config.py
+/venv/*
+/.idea/*
+
