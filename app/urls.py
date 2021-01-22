@@ -11,6 +11,6 @@ urlpatterns = [
     path('', views.index, name='home'),
 
     # add in project paths
-    # path('twitterapp/', include('twitterapp.urls')),
+    path('twitterapp/', include('twitterapp.urls')),
     # path('stocks/', include('stocks.urls')),
 ]

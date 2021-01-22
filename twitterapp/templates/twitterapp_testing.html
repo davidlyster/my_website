@@ -1,0 +1,53 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Twitter App {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header mb-5" style="margin-bottom: 5px !important;">
+        <h5 class="card-category">Twitter</h5>
+        <h3 class="card-title" style="margin-bottom: 0;">Find most recent tweets for any term!</h3>
+        <h5 class="card-title" style="margin-bottom: 1rem !important; font-style: italic;">Showing top {{tweet_amount}} tweets for <span style="font-weight: bold;">{{search_term}}</span></h3>
+    </div>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="row" style="margin: 0 auto; width: 99%; margin-bottom: 2px;">
+            <div class="col">
+            <input id="search_term" name="search_term" type="text" class="form-control" maxlength="100" placeholder="Search for..." required>
+            </div>
+            <div class="col">
+            <input id="search_amount" name="search_amount" type="number" name="search_amount" max="100" min="1" class="form-control" placeholder="Tweet Amount" required>
+            </div>
+        </div>
+        <button type="submit" style="margin-left: 2%;" class="btn btn-primary" value="Search">Search</button>
+    </form>
+
+    <div class="card-body">
+        {% for tw in full_tweet_data %}
+
+        <a style="display:block" href="{{tw.url}}">
+            <div class="card card-tweet" style="margin-bottom: 1rem !important">
+                <div class="card-body">
+                    <p class="tweet-box-text display-name">{{ tw.author_display_name }}</p>
+                    <p class="tweet-box-text twitter-name">{{ tw.author_twitter_name }}</p>
+                    <p class="tweet-box-text">{{ tw.text }}</p>
+                    <p class="tweet-box-text timestamp">{{ tw.timestamp }}</p>
+                </div>
+            </div>
+        </a>
+
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

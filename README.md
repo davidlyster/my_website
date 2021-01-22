@@ -34,6 +34,20 @@ $ # Access the web app in browser: http://127.0.0.1:8000/
 
 <br />
 
+## Packages
+
+Packages that will neeed to be installed in your environment: Tweepy
+
+```bash
+pip3 install tweepy
+```
+
+## Yahoo Finance API 
+
+- The API is provided by rapidAPI @ https://rapidapi.com/apidojo/api/yahoo-finance1 (*note: cannot seem to log in on chrome*). A free subscription allows for 500 API calls a day.
+- The endpoint used is stock/v3/get-historical-data and can be found/searched on the left hand side of the page in the Endpoints tab.
+- Once selected the code block on the right will provide some sample code on how to use the API, make sure to select Node.js->Axios if copying from here. This code will also contain your access keys.
+
 ## Boilerplate Template Provider
 
 > Free product - **Black Django Dashboard** template
