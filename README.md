@@ -36,10 +36,13 @@ $ # Access the web app in browser: http://127.0.0.1:8000/
 
 ## Packages
 
-Packages that will neeed to be installed in your environment: Tweepy
+Packages that will neeed to be installed in your environment: Tweepy, Pandas, Pandas DataReader, YFinance (Yahoo! Finance API)
 
 ```bash
 pip3 install tweepy
+pip3 install pandas
+pip3 install pandas_datareader
+pip3 install yfinance
 ```
 
 ## Yahoo Finance API 

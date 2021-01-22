@@ -34,7 +34,7 @@ INSTALLED_APPS = [
     'app',  # Enable the inner app 
     # register new apps
     'twitterapp',
-    # 'stocks'
+    'stocks',
 ]
 
 MIDDLEWARE = [
