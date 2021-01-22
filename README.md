@@ -36,6 +36,6 @@ $ # Access the web app in browser: http://127.0.0.1:8000/
 
 ## Boilerplate Template Provider
 
-> Free product - **Django Dashboard** starter project
+> Free product - **Black Django Dashboard** template
 
 [Black Dashboard Django](https://www.creative-tim.com/product/black-dashboard-django) - Provided by [Creative Tim](https://www.creative-tim.com/) and [AppSeed](https://appseed.us)

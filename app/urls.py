@@ -1,10 +1,6 @@
 # -*- encoding: utf-8 -*-
-"""
-License: MIT
-Copyright (c) 2019 - present AppSeed.us
-"""
 
-from django.urls import path, re_path
+from django.urls import path, re_path, include
 from app import views
 
 urlpatterns = [
@@ -13,4 +9,8 @@ urlpatterns = [
 
     # The home page
     path('', views.index, name='home'),
+
+    # add in project paths
+    # path('twitterapp/', include('twitterapp.urls')),
+    # path('stocks/', include('stocks.urls')),
 ]
