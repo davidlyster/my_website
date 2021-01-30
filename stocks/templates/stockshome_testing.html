@@ -15,7 +15,7 @@
         <div class="row">
           <div class="col-sm-6 text-left">
             <h5 class="card-category">Stock Analysis (TESTING)</h5>
-            <h2 class="card-title">{{stock_ticker}}</h2>
+            <h2 class="card-title">{{stock_ticker|upper}}</h2>
           </div>
           <div class="col-sm-6">
             <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
@@ -67,6 +67,27 @@
   </div>
 </div>
 
+<div class="row">
+
+  <!-- R/B/W full log -->
+  <div class="col-md-12">
+    <div class="card">
+      {% if current_position|lower == "buy" %}
+        <div class="card-header" style="background: linear-gradient(203deg, rgba(99,253,29,1) 0%, rgba(58,180,67,1) 28%, rgba(63,156,81,1) 82%); border-radius: 5px;">
+          <h4 class="card-title" >
+            {{stock_ticker|upper}} is in a Buying position. Buy now if not currently in position.
+          </h4>
+      {% else %}
+        <div class="card-header" style="background: linear-gradient(153deg, rgba(231,20,20,1) 0%, rgba(121,21,9,1) 64%); border-radius: 5px;">
+          <h4 class="card-title" >
+            {{stock_ticker|upper}} is in a Selling position. Sell now if currently in position.
+          </h4>
+      {% endif %}
+        </div>
+    </div>
+  </div>
+</div>
+
 <!-- the row is based off ui-notificiations.html  -->
 <!-- this is where analysis will be logged/shown -->
 <div class="row">
@@ -77,21 +98,40 @@
       <div class="card-header">
         <h4 class="card-title">Red/Blue/White Run Analysis</h4>
       </div>
-      <div class="card-body" style="max-height: 400px; overflow: scroll; border-top: 2px solid;">
-        {% for log in stock_analysis_logs %}
+      <div class="card-body" style="max-height: 400px; overflow: scroll; border-top: 2px solid; padding-top: 5px;">
+        <!-- {% for log in stock_analysis_logs %}
           <div class="alert alert-info">
             <span>{{log}}</span>
           </div>
-        {% endfor %}
+        {% endfor %} -->
+        <div class="table-full-width table-responsive">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td style="border: none">
+                  <p class="title" style="margin: 0">{{stock_ticker|upper}} Selected</p>
+                </td>
+              </tr>
+              {% for log in stock_analysis_logs %}
+                <tr>
+                  <td style="padding: 8px 6px;">
+                    <p class="title" style="margin: 0;">{{log.0}}</p>
+                    <p class="text" style="margin: 0;">{{log.1}}</p>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table> 
+        </div>
       </div>
     </div>
   </div>
 
   <!-- just R/B/W log -->
-  <div class="col-md-6">
+  <!-- <div class="col-md-6">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title">Red/Blue/White Log</h4>
+        <h4 class="card-title">Red/Blue/White Ema Analysis Position Log</h4>
       </div>
       <div class="card-body" style="max-height: 400px; overflow: scroll; border-top: 2px solid;">
         {% for RBW in stock_rbw_statements %}
@@ -105,6 +145,55 @@
             </div>
           {% endif %}
         {% endfor %}
+      </div>
+    </div>
+  </div> -->
+
+  <!-- Testing New R/B/W log -->
+  <div class="col-lg-6 col-md-12">
+    <div class="card ">
+      <div class="card-header">
+        <h4 class="card-title">Red/Blue/White Log</h4>
+      </div>
+      <div class="card-body" style="max-height: 400px; overflow: scroll; border-top: 2px solid; padding-top: 0;">
+        <div class="table-responsive">
+          <table class="table tablesorter " id="">
+            <thead class=" text-primary">
+              <tr>
+                <th>
+                  Date
+                </th>
+                <th>
+                  Info
+                </th>
+                <th class="text-center">
+                  Price
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for log in red_blue_white_log %}
+                {% if log.3 == "BUY" %}
+                <tr style="background: linear-gradient(203deg, rgba(99,253,29,1) 0%, rgba(58,180,67,1) 28%, rgba(63,156,81,1) 82%);">
+                {% elif log.3 == "SELL" %}
+                <tr style="background: linear-gradient(153deg, rgba(231,20,20,1) 0%, rgba(121,21,9,1) 64%);">
+                {% else %}
+                <tr>
+                {% endif %}
+                  <td>
+                    {{ log.0 }}
+                  </td>
+                  <td>
+                    {{ log.1 }}
+                  </td>
+                  <td>
+                    {{ log.2 }}
+                  </td>
+                </tr>
+              {% endfor %}            
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>

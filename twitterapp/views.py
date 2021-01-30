@@ -7,10 +7,12 @@ from dev_config import TESTING
 
 def twitter_main(request):
     """
-    This is the function to load the main twitter app page
+    Used to load the twitter app page which loads 10 tweets with 'NFL' as the search term upon original visit (which is a get request).
+    When the form on the associated twitterapp_main/testing.html page, a post request is sent which will change 
+    the search criteria for the search_term_since_date call.
     """
 
-    # TODO: these 2 lines are manual tests, will be removed - this is where the twitter app will start (for now)
+    # TODO: what is the default term? Should there even be a default search - maybe suggested(clickable) searches instead?
     search_term = 'NFL'
     tweet_amount = 10
 
@@ -26,11 +28,13 @@ def twitter_main(request):
         else:
             # TODO what to do here if error?
             print('not')
-
     else:
         form = BasicSearchForm()
 
     # Boolean Values: exclude_retweets, text_only, full_tweets
+    # TODO: allow for manual date range? or increase default range?
+    #  - may not be needed as function limited to 100 tweets
+    #  - although unpopulare terms (eg. Rower-Inistioge GAA) may not have 100 tweets since 2020-11-26 but could for larger range
     tweets_data = twit_api.search_term_since_date(search_term, '2020-11-26', tweet_amount, True, False, True)
 
     full_tweet_data = extract_specific_tweet_data(tweets_data)
