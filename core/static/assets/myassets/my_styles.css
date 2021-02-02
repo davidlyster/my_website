@@ -92,6 +92,15 @@
   .card-tweet:hover {
     border: 3px solid white;
   }
+  .card-homepage {
+    background: #1E1F2D;
+    border-radius: 15px;
+    margin-bottom: 1rem !important; 
+    border: 2px solid white;
+  }
+  .card-homepage:hover {
+    border: 3px solid rgb(211, 18, 195);
+  }
   /********************
   ** tweet box stuff **
   *********************/
@@ -134,3 +143,13 @@
   /************************
   ** end tweet box stuff **
   *************************/
+  .homepage_tab {
+    float: left; 
+    /* width: 33%;  */
+    height: 600px; 
+    border-right: 1px solid  #1e1f2a;
+  }
+  .homepage_tab:last-child {
+    float: right; 
+    border-right: none;
+  }
