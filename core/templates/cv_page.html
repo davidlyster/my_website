@@ -1,4 +1,5 @@
 {% extends 'layouts/base.html' %}
+{% load static %}
 
 {% block title %} Resume {% endblock %} 
 
@@ -11,177 +12,17 @@
 <div class="row">
   <div class="col-md-12">
     <div class="card">
-      <div class="card-header mb-5">
-        <h5 class="card-category">David Lyster Info</h5>
-        <h3 class="card-title">My Resume</h3>
+      <div class="card-header mb-5" style="margin-bottom: 1.5rem !important;">
+        <h3 class="card-title" style="font-weight: bold;">My Resume</h3>
+        <h5 class="card-category" style=" text-transform: none;">Was going to make my own front end to display a copy of my cv but decided to go with a neat iFrame instead which also allows you to download the pdf</h5>
       </div>
       <div class="card-body">
-        <div class="my-typography-line">
-            <p><span style="top: 4%">About Me</span>
-                I intend to try something new and exciting with a new team/company, ideally as a python/BI developer or data analyst.
-                </br></br>I already have extensive experience delivering mission critical tools in python (PluralSight Certified Python Expert – see stack overflow developer story at bottom of page) so would be happy to continue as a full time python developer should I find the work/project to be particularly interesting or challenging, but I also think I would not only excel but massively enjoy working as a BI developer or analyst.
-            </p>
+
+        <!-- iFrame for the cv pdf -->
+        <div>
+          <iframe src="{% static 'assets/img/DavidLysterCV.pdf' %}#view=FitH" style="width:100%; height:700px; border: none;"></iframe>
         </div>
-        <div class="my-typography-line">
-            <p><span style="top: 4%">Employment History</span>
-                <div class="my-typography-line" style="padding-left: 15%">
-                    <p><span><img src="/static/assets/img/HSBC-logo.jpg" alt="HSBC" 
-                        style="width:4rem !important"></span>
-                        I actively work as the web-app lead for our team, delivering internal tools for members of HSBC’s risk department across the globe. The tools are built using the flask micro-framework (python), with the front end being built using a combination of HTML, css and JavaScript and each of the web-apps interacting heavily with our MS-SQL database (SQL Server).
-                        </br></br>One of the tools has become quite critical to our reporting system as it introduces temporary solutions to DQ issues that would otherwise take some time (months) to resolve. I actively administer this for our team and train others to use it too. I have recently been working to automate this process where possible which I’ve quite enjoyed.</p>
-                </div>
-                <div class="my-typography-line" style="padding-left: 15%">
-                    <p><span><img src="/static/assets/img/FDM-logo-black.jpg" alt="HSBC" 
-                        style="width:4rem !important"></span>
-                        I actively work as the web-app lead for our team, delivering internal tools for members of HSBC’s risk department across the globe. The tools are built using the flask micro-framework (python), with the front end being built using a combination of HTML, css and JavaScript and each of the web-apps interacting heavily with our MS-SQL database (SQL Server).
-                        </br></br>One of the tools has become quite critical to our reporting system as it introduces temporary solutions to DQ issues that would otherwise take some time (months) to resolve. I actively administer this for our team and train others to use it too. I have recently been working to automate this process where possible which I’ve quite enjoyed.
-                    </p>
-                </div>
-            </p>
-        </div>
-        <div class="my-typography-line">
-            <p><span>Personal Work</span>
-                Upon leaving HSBC I decided to take some personal time to work on this website which helped me work on the following skills.. bla bla
-            </p>
-        </div>
-        <div class="my-typography-line">
-            <p><span>Education</span>
-                <div class="my-typography-line">
-                    <p><span>Header 1</span>Stuff about UCD</p>
-                  </div>
-                  <div class="my-typography-line">
-                    <p><span>Header 2</span>Stuff about GCC</p>
-                  </div>
-            </p>
-        </div>
-        <div class="my-typography-line">
-          <h1><span>Header 1</span>The Life of Black Dashboard </h1>
-        </div>
-        <div class="my-typography-line">
-          <h2><span>Header 2</span>The Life of Black Dashboard </h2>
-        </div>
-        <div class="my-typography-line">
-          <h3><span>Header 3</span>The Life of Black Dashboard </h3>
-        </div>
-        <div class="my-typography-line">
-          <h4><span>Header 4</span>The Life of Black Dashboard </h4>
-        </div>
-        <div class="my-typography-line">
-          <h5><span>Header 5</span>The Life of Black Dashboard </h5>
-        </div>
-        <div class="my-typography-line">
-          <h6><span>Header 6</span>The Life of Black Dashboard </h6>
-        </div>
-        <div class="my-typography-line">
-          <p><span>Paragraph</span>
-            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at.
-          </p>
-        </div>
-        <div class="my-typography-line">
-          <span>Quote</span>
-          <blockquote>
-            <p class="blockquote blockquote-primary">
-              "I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at."
-              <br>
-              <br>
-              <small>
-                - Noaa
-              </small>
-            </p>
-          </blockquote>
-        </div>
-        <div class="my-typography-line">
-          <span>Muted Text</span>
-          <p class="text-muted">
-            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers...
-          </p>
-        </div>
-        <div class="my-typography-line">
-          <span>Primary Text</span>
-          <p class="text-primary">
-            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers...</p>
-        </div>
-        <div class="my-typography-line">
-          <span>Info Text</span>
-          <p class="text-info">
-            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers... </p>
-        </div>
-        <div class="my-typography-line">
-          <span>Success Text</span>
-          <p class="text-success">
-            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers... </p>
-        </div>
-        <div class="my-typography-line">
-          <span>Warning Text</span>
-          <p class="text-warning">
-            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers...
-          </p>
-        </div>
-        <div class="my-typography-line">
-          <span>Danger Text</span>
-          <p class="text-danger">
-            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers... </p>
-        </div>
-        <div class="my-typography-line">
-          <h2><span>Small Tag</span>
-            Header with small subtitle <br>
-            <small>Use "small" tag for the headers</small>
-          </h2>
-        </div>
-        <div class="my-typography-line">
-          <span>Lists</span>
-          <div class="row">
-            <div class="col-md-3">
-              <h5>Unordered List</h5>
-              <ul>
-                <li>List Item</li>
-                <li>List Item</li>
-                <li class="list-unstyled">
-                  <ul>
-                    <li>List Item</li>
-                    <li>List Item</li>
-                    <li>List Item</li>
-                  </ul>
-                </li>
-                <li>List Item</li>
-              </ul>
-            </div>
-            <div class="col-md-3">
-              <h5>Ordered List</h5>
-              <ol>
-                <li>List Item</li>
-                <li>List Item</li>
-                <li>List item</li>
-                <li>List Item</li>
-              </ol>
-            </div>
-            <div class="col-md-3">
-              <h5>Unstyled List</h5>
-              <ul class="list-unstyled">
-                <li>List Item</li>
-                <li>List Item</li>
-                <li>List item</li>
-                <li>List Item</li>
-              </ul>
-            </div>
-            <div class="col-md-3">
-              <h5>Inline List</h5>
-              <ul class="list-inline">
-                <li class="list-inline-item">List1</li>
-                <li class="list-inline-item">List2</li>
-                <li class="list-inline-item">List3</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="my-typography-line">
-          <span>Code</span>
-          <p>This is
-            <code>.css-class-as-code</code>, an example of an inline code element. Wrap inline code within a
-            <code> &lt;code&gt;...&lt;/code&gt;</code>tag.
-          </p>
-          <pre>1. #This is an example of preformatted text.<br/>2. #Here is another line of code</pre>
-        </div>
+
       </div>
     </div>
   </div>
