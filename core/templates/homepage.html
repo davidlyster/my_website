@@ -1,0 +1,98 @@
+
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %} Dashboard {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card card-chart">
+                <div class="card-header ">
+                    <div class="row">
+                        <div class="col-sm-6 text-left">
+                            <h2 class="card-title" style="font-weight: bold; margin-top: 10px;">Welcome!</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body" style="padding: 0; margin: 0;">
+                    <div class="card-header mb-5" style="padding-bottom: 0; margin-bottom: 0;">
+                        <!-- <h3 class="card-title" style="font-weight: bold;">Welcome!</h3> -->
+                        <a class="card-category" style="color: white; line-height: 20px; text-transform: none;" style="padding-bottom: 0; margin-bottom: 0;">
+                            I've been building this website to show off some fun widgets I've made! <br/>
+                            I've used Django as a Python web framework and have deployed the site on an AWS LightSail instance.<br/>
+                            You can check out the code on Git <span><a href="https://github.com/davidlyster/my_website">here</a></span> - Note: it's still very much a work in progress and I plan to add to it as the ideas come to me.
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+        
+    <div class="row">
+        <div class="col-lg-4">
+            <a style="display:block" href="/stocks/">
+                <div class="card card-chart-dave" style="height: 25rem;">
+                    <div class="card-header" style="padding: 0;">
+                        <div style="height: 50%;"><img src="{% static 'assets/img/stonks.jpg' %}" /></div>
+                    </div>
+                    <div class="card-header mb-5" style="padding-bottom: 20px;">
+                        <h3 class="card-title" style="font-weight: bold;">Stocks</h3>
+                        <div class="card-category" style="color: white; line-height: 25px; text-transform: none;">
+                            Track the closing price movement of any stock available on Yahoo! Finance. The app also includes output of a trading simulation based on exponential moving average prices over the past year.
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-4">
+            <a style="display:block" href="/twitterapp/">
+                <div class="card card-chart-dave" style="height: 25rem;">
+                    <div class="card-header" style="padding: 0;">
+                    <div style="height: 50%;"><img src="{% static 'assets/img/trump.jpg' %}" /></div>
+                    </div>
+                    <div class="card-header mb-5" style="padding-bottom: 20px;">
+                        <h3 class="card-title" style="font-weight: bold;">Twitter</h3>
+                        <div class="card-category" style="color: white; line-height: 25px; text-transform: none;">
+                            Enter a search term and read the most recent tweets containing that term! Up to 100 tweets allowed. Can only provide tweets available via Twitters API.
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-4">
+            <a style="display:block" href="/cv_page.html">
+                <div class="card card-chart-dave" style="height: 25rem;">
+                    <div class="card-header" style="padding: 0;">
+                    <div style="height: 50%;"><img src="{% static 'assets/img/smrt.jpg' %}" /></div>
+                    </div>
+                    <div class="card-header mb-5" style="padding-bottom: 20px;">
+                        <h3 class="card-title" style="font-weight: bold;">Resume</h3>
+                        <div class="card-category" style="color: white; line-height: 25px; text-transform: none;">
+                            Some might say CV
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+  <!-- <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/js/demos.js
+      demo.initDashboardPageCharts();
+
+    });
+  </script> -->
+
+{% endblock javascripts %}
