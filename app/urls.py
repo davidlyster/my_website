@@ -13,4 +13,5 @@ urlpatterns = [
     # add in project paths
     path('twitterapp/', include('twitterapp.urls')),
     path('stocks/', include('stocks.urls')),
+    path('searcher/', include('searcher.urls')),
 ]

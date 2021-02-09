@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     # register new apps
     'twitterapp',
     'stocks',
+    'searcher',
 ]
 
 MIDDLEWARE = [

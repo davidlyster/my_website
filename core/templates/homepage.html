@@ -25,7 +25,8 @@
                         <a class="card-category" style="color: white; line-height: 20px; text-transform: none;" style="padding-bottom: 0; margin-bottom: 0;">
                             I've been building this website to show off some fun widgets I've made! <br/>
                             I've used Django as a Python web framework and have deployed the site on an AWS LightSail instance.<br/>
-                            You can check out the code on Git <span><a href="https://github.com/davidlyster/my_website">here</a></span> - Note: it's still very much a work in progress and I plan to add to it as the ideas come to me.
+                            You can check out the code on Git <span style="font-size: 0.75rem;"><a href="https://github.com/davidlyster/my_website">here</a></span>
+                            <a style="font-size: 0.75rem; color: white;"> - Note: it's still very much a work in progress and I plan to add to it as the ideas come to me.</a>
                         </a>
                     </div>
                 </div>
@@ -35,6 +36,8 @@
     </div>
         
     <div class="row">
+
+        <!-- Stocks App -->
         <div class="col-lg-4">
             <a style="display:block" href="/stocks/">
                 <div class="card card-chart-dave" style="height: 25rem;">
@@ -50,6 +53,8 @@
                 </div>
             </a>
         </div>
+
+        <!-- Twitter App -->
         <div class="col-lg-4">
             <a style="display:block" href="/twitterapp/">
                 <div class="card card-chart-dave" style="height: 25rem;">
@@ -65,6 +70,25 @@
                 </div>
             </a>
         </div>
+
+        <!-- A* Search -->
+        <div class="col-lg-4">
+            <a style="display:block" href="/searcher/">
+                <div class="card card-chart-dave" style="height: 25rem;">
+                    <div class="card-header" style="padding: 0;">
+                    <div style="height: 50%;"><img src="{% static 'assets/img/gmaps.png' %}" /></div>
+                    </div>
+                    <div class="card-header mb-5" style="padding-bottom: 20px;">
+                        <h3 class="card-title" style="font-weight: bold;">A* Search Visualisation</h3>
+                        <div class="card-category" style="color: white; line-height: 25px; text-transform: none;">
+                            I've built a Pygame application to visualise the movement of the A* search tree. Check this module out for links to the repo or feel free to download the executable file to run it yourself.
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Resume -->
         <div class="col-lg-4">
             <a style="display:block" href="/cv_page.html">
                 <div class="card card-chart-dave" style="height: 25rem;">
@@ -80,6 +104,7 @@
                 </div>
             </a>
         </div>
+        
     </div>
 
 {% endblock content %}

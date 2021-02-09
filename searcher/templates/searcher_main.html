@@ -1,0 +1,84 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block title %} Resume {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<!-- xyxy this is all based off ui-typography.html  -->
+<div class="row">
+  <div class="col-md-12">
+
+    <div class="card">
+      <div class="card-header mb-5" style="margin-bottom: 0 !important;">
+        <h3 class="card-title" style="font-weight: bold;">A* Search Visualisation</h3>
+        <!-- <h5 class="card-category" style=" text-transform: none;">I was going to make my own front end to display a copy of my cv but decided to go with a neat iFrame instead which also allows you to download the pdf.</h5>
+        <h5 class="card-category" style=" text-transform: none;">Unfortunately the viewer is not supported on mobile at the moment but you can simply click the link in the frame to open the pdf in a new tab.</h5> -->
+      </div>
+
+      <div class="card-body" style="padding: 0; margin: 0;">
+        <div class="card-header mb-5" style="padding-bottom: 0; margin-bottom: 0 !important">
+            <!-- <h3 class="card-title" style="font-weight: bold;">Welcome!</h3> -->
+            <a class="card-category" style="color: white; line-height: 20px; text-transform: none;" style="padding-bottom: 0; margin-bottom: 0;">
+                Unfortunately I could not find a way to embed this python application into the webpage so I've included a download to the containing folder and some examples of the application running in the videos below.<br/>
+                Feel free to check out the code on Git where I go into further detail about implementation and the algorithm itself.<br/>
+                You can check it out <span style="font-size: 0.75rem;"><a href="https://github.com/davidlyster/Astar_search_pygame">here</a></span>
+            </a>
+        </div>
+      </div>
+
+      <div class="card-body">
+
+        <!-- xyxy can we show the visualisation in an iFrame here like this pdf? -->
+        <!-- iFrame for the cv pdf -->
+        <div style="padding: 1rem; padding-left: 0; color: white">
+            Link - <a href="{% static 'assets/executables/AStar_Game_Executable.zip' %}">Download my program!</a>
+        </div>
+
+        <h3 class="card-title" style="font-weight: bold;">Examples</h3>
+
+        <div class="row">
+          <div class="col-lg-4">
+              <a style="display:block">
+                  <div class="card card-chart" style="height: 25rem;">
+                    <video width="100%" height="100%" controls>
+                      <source src="{% static 'assets/videos/AStarQuick.mov' %}" >
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+              </a>
+          </div>
+          <div class="col-lg-4">
+              <a style="display:block">
+                  <div class="card card-chart" style="height: 25rem;">
+                    <video width="100%" height="100%" controls>
+                      <source src="{% static 'assets/videos/AStarMedium.mov' %}" >
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+              </a>
+          </div>
+          <div class="col-lg-4">
+              <a style="display:block">
+                  <div class="card card-chart" style="height: 25rem;">
+                    <video width="100%" height="100%" controls>
+                      <source src="{% static 'assets/videos/AStarLong.mov' %}" >
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+              </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
