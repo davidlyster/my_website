@@ -11,7 +11,6 @@ from django.http import HttpResponse
 from django import template
 from dev_config import TESTING
 
-# xyxy turned this off, will site still work
 # @login_required(login_url="/login/")
 def index(request):
     if TESTING:
@@ -19,23 +18,3 @@ def index(request):
     else:
         return render(request, "homepage.html")
 
-# @login_required(login_url="/login/")
-def pages(request):
-    context = {}
-    # All resource paths end in .html.
-    # Pick out the html file name from the url. And load that template.
-    try:
-        
-        load_template = request.path.split('/')[-1]
-        html_template = loader.get_template( load_template )
-        return HttpResponse(html_template.render(context, request))
-        
-    except template.TemplateDoesNotExist:
-
-        html_template = loader.get_template( 'error-404.html' )
-        return HttpResponse(html_template.render(context, request))
-
-    except:
-    
-        html_template = loader.get_template( 'error-500.html' )
-        return HttpResponse(html_template.render(context, request))

@@ -5,26 +5,23 @@ Copyright (c) 2019 - present AppSeed.us
 """
 
 import os
-from decouple import config
-from unipath import Path
-import dj_database_url
+from pathlib import Path
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR    = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_DIR = Path(__file__).parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY', default='S#perS3crEt_1122')
+SECRET_KEY = "S#perS3crEt_1122"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False)
+# xyxy TODO change later
+DEBUG = False
 
 # load production server from .env
-# added new static IP 46.51.151.184 - soon will have davidlyster.com
-ALLOWED_HOSTS = ['46.51.151.184', '54.74.180.160', 'localhost', '127.0.0.1', config('SERVER', default='127.0.0.1')]
+ALLOWED_HOSTS = ['davidlyster.net', '18.200.146.57', '54.220.9.63', '46.51.151.184', 'localhost', '127.0.0.1']
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -47,7 +44,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -126,8 +123,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
+# local dev - use core/static
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'core/static'),
+    os.path.join(BASE_DIR, 'static/'),
 )
 #############################################################
 #############################################################
