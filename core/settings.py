@@ -15,7 +15,6 @@ PROJECT_DIR = Path(__file__).parent
 SECRET_KEY = "S#perS3crEt_1122"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# xyxy TODO change later
 DEBUG = False
 
 # load production server from .env
@@ -123,7 +122,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
-# local dev - use core/static
+# local dev - use 'core/static', server - 'static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static/'),
 )

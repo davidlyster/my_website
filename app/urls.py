@@ -2,6 +2,7 @@
 
 from django.urls import path, re_path, include
 from app import views
+from django.views.generic.base import TemplateView
 
 
 urlpatterns = [
@@ -15,4 +16,5 @@ urlpatterns = [
     path('twitterapp/', include('twitterapp.urls')),
     path('stocks/', include('stocks.urls')),
     path('searcher/', include('searcher.urls')),
+    path('resume/', TemplateView.as_view(template_name='cv_page.html'), name='Resume'),
 ]
