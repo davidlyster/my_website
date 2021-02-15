@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .controllers.twitter_controller_rename import TwitterAPI
+from .controllers.twitter_controller import TwitterAPI
 from django.http import HttpResponseRedirect
 from .Forms import BasicSearchForm
 from dev_config import TESTING
