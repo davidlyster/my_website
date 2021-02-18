@@ -16,5 +16,5 @@ urlpatterns = [
     path('twitterapp/', include('twitterapp.urls')),
     path('stocks/', include('stocks.urls')),
     path('searcher/', include('searcher.urls')),
-    path('resume/', TemplateView.as_view(template_name='cv_page.html'), name='Resume'),
+    path('resume/', views.cv_page, name='Resume'),
 ]

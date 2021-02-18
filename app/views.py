@@ -11,10 +11,14 @@ from django.http import HttpResponse
 from django import template
 from dev_config import TESTING
 
-# @login_required(login_url="/login/")
+@login_required(login_url="/login/")
 def index(request):
     if TESTING:
         return render(request, "index.html")
     else:
         return render(request, "homepage.html")
 
+
+@login_required(login_url="/login/")
+def cv_page(request):
+    return render(request, "cv_page.html")

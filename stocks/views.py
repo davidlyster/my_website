@@ -7,6 +7,8 @@ import yfinance as yf   # Yahoo! Finance market data downloader
 from pandas_datareader import data as pdr
 import json
 from .Forms import BasicStockSearchForm
+from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.decorators import login_required
 
 """
 TODO
@@ -16,6 +18,8 @@ TODO
 - custom date range for stock lookup?
 """
 
+@csrf_exempt
+@login_required(login_url="/login/")
 def stocks_main(request):
 
     # this is just the default and is replaced when a post request is received

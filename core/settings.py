@@ -18,7 +18,7 @@ SECRET_KEY = "S#perS3crEt_1122"
 DEBUG = False
 
 # load production server from .env
-ALLOWED_HOSTS = ['davidlyster.net', '18.200.146.57', '54.220.9.63', '46.51.151.184', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['3.251.1.224', 'www.davidlyster.net', 'davidlyster.net', '18.200.146.57', '54.220.9.63', '46.51.151.184', 'localhost', '127.0.0.1']
 
 # Application definition
 INSTALLED_APPS = [
