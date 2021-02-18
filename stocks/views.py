@@ -19,7 +19,7 @@ TODO
 """
 
 @csrf_exempt
-@login_required(login_url="/login/")
+# @login_required(login_url="/login/")
 def stocks_main(request):
 
     # this is just the default and is replaced when a post request is received

@@ -7,7 +7,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
 
 @csrf_exempt
-@login_required(login_url="/login/")
+# @login_required(login_url="/login/")
 def twitter_main(request):
     """
     Used to load the twitter app page which loads 10 tweets with 'NFL' as the search term upon original visit (which is a get request).
